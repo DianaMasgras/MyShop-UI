@@ -1,24 +1,21 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom';
 import { Input, Menu, Segment } from 'semantic-ui-react'
+import { Icon } from 'semantic-ui-react'
 
-export default class MenuExamplePointing extends Component {
-  state = { activeItem: 'home' }
-
-  handleItemClick = (e, { name }) => this.setState({ activeItem: name })
+class TopMenu extends React.Component {
 
   render() {
-    const { activeItem } = this.state
 
     return (
       <div>
         <Menu pointing>
-          <Menu.Item
-            name='home'
-            active={activeItem === 'home'}
-            onClick={this.handleItemClick}
-          />
+          <Menu.Item >
+              <Link to="/products"><Icon name='content' /></Link> 
+          </Menu.Item>
         </Menu>
       </div>
     )
   }
 }
+export default TopMenu;
