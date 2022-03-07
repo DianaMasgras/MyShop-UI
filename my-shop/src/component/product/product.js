@@ -1,6 +1,7 @@
 import React from "react";
 import { Card, Icon, Image } from "semantic-ui-react";
 import ProductRestService from "../../service/product-rest-service";
+import './product.css';
 
 class Product extends React.Component {
   state = {
@@ -36,26 +37,9 @@ class Product extends React.Component {
   render() {
     console.log(this.state.products)
     return (
-      <div>
+      <div className="card-conteiner">
         {this.state.products.map((product) => this.renderProduct(product))}
-        <Card>
-          <Image src='https://react.semantic-ui.com/images/avatar/large/daniel.jpg' wrapped ui={false} />
-          <Card.Content>
-            <Card.Header>Daniel</Card.Header>
-            <Card.Description>
-              Daniel is a comedian living in Nashville.
-            </Card.Description>
-            <Card.Meta>Joined in 2016</Card.Meta>
-          </Card.Content>
-          <Card.Content extra>
-            <a>
-              <Icon name='user' />
-              10 Friends
-            </a>
-          </Card.Content>
-        </Card>
       </div>
-
     )
   }
 }

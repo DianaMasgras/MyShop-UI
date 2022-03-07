@@ -1,0 +1,19 @@
+.top-menu-right{
+display: flex; 
+position:absolute;
+right:0;
+flex-wrap: wrap;
+right: 10px;
+justify-content: space-around;
+align-items: baseline;
+}
+
+.logo{
+position:absolute;
+left: 96px;
+
+}
+
+.ui.menu .item:before{
+    background: none;
+}
