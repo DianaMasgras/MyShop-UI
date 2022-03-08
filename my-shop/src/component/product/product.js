@@ -1,5 +1,6 @@
 import React from "react";
 import { Card, Icon, Image } from "semantic-ui-react";
+import { Link } from "react-router-dom"
 import ProductRestService from "../../service/product-rest-service";
 import './product.css';
 
@@ -16,22 +17,24 @@ class Product extends React.Component {
 
   renderProduct(product) {
     console.log('render product ' + product)
-    return <Card key={product.name}>
-    <Image src='https://react.semantic-ui.com/images/avatar/large/daniel.jpg' wrapped ui={false} />
-    <Card.Content>
-      <Card.Header>{product.name}</Card.Header>
-      <Card.Description>
-        {product.description}
-      </Card.Description>
-      <Card.Meta>{product.price} $</Card.Meta>
-    </Card.Content>
-    <Card.Content extra>
-      <a>
-        <Icon name='user' />
-        10 Friends
-      </a>
-    </Card.Content>
-  </Card>
+    return <Link to="/product">
+      <Card key={product.name}>
+        <Image src='https://react.semantic-ui.com/images/avatar/large/daniel.jpg' wrapped ui={false} />
+        <Card.Content>
+          <Card.Header>{product.name}</Card.Header>
+          <Card.Description>
+            {product.description}
+          </Card.Description>
+          <Card.Meta>{product.price} $</Card.Meta>
+        </Card.Content>
+        <Card.Content extra>
+          <a>
+            <Icon name='user' />
+            10 Friends
+          </a>
+        </Card.Content>
+      </Card>
+    </Link>
   }
 
   render() {
