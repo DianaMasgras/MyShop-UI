@@ -8,12 +8,11 @@ justify-content: space-around;
 align-items: baseline;
 }
 
-.logo{
-position:absolute;
-left: 96px;
-
-}
-
-.ui.menu .item:before{
+div.ui.menu .item:before {
     background: none;
 }
+
+.logo{
+    position:absolute;
+    left: 96px;
+    }
