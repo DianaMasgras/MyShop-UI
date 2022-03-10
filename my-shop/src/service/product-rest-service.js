@@ -3,6 +3,10 @@ import axios from "axios";
 const ProductRestService = {
     getProduct: async function () {
       return await axios.get('http://localhost:8080/products');
+    },
+
+    getProductById: async function(id) {
+      return await axios.get('http://localhost:8080/product/' + id);
     }
 };
 

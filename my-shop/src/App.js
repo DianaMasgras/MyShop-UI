@@ -11,16 +11,18 @@ import {
 } from "react-router-dom";
 
 function App() {
+
   return (
     <Router>
       <TopMenu />
+      <body>
+        <Routes>
+          <Route path="/products" element={<Product />} />
+          <Route path="/home" element={<HomePage />} />
+          <Route path="/product/:id" element={<ProductPage />} />
+        </Routes>
+      </body>
       <Footer />
-
-      <Routes>
-        <Route path="/products" element={<Product />} />
-        <Route path="/home" element={<HomePage />} />
-        <Route path="/product" element={<ProductPage />} />
-      </Routes>
     </Router>
   );
 }
