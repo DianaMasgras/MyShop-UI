@@ -1,12 +1,12 @@
 import axios from "axios";
 
 const ProductRestService = {
-    getProduct: async function () {
-      return await axios.get('http://localhost:8080/products');
+    get: async function () {
+      return await axios.get('http://localhost:3001/api/products');
     },
 
     getProductById: async function(id) {
-      return await axios.get('http://localhost:8080/product/' + id);
+      return await axios.get('http://localhost:30001/api/product/' + id);
     }
 };
 

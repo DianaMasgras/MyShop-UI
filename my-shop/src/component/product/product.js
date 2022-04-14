@@ -1,8 +1,11 @@
 import React from "react";
-import { Card, Icon, Image, Menu } from "semantic-ui-react";
+import { Card, GridColumn, GridRow, Icon } from "semantic-ui-react";
 import { Link } from "react-router-dom"
 import ProductRestService from "../../service/product-rest-service";
 import './product.css';
+import ProductFilter from "../product-filter/product-filter";
+import { Grid, Ref, Segment, Placeholder, Rail, Sticky, Header, Image } from "semantic-ui-react";
+import _ from 'lodash';
 
 class Product extends React.Component {
   state = {
@@ -18,16 +21,9 @@ class Product extends React.Component {
   renderProduct(product) {
     console.log('render product ' + product)
     const path = "/product/" + product.id
+
     return (
       <div className="content">
-        <Menu vertical>
-          <Menu.Item href='//example.com' target='_blank'>
-            Visit another website
-          </Menu.Item>
-          <Menu.Item link>Link via prop</Menu.Item>
-          <Menu.Item onClick={this.handleClick}>Javascript Link</Menu.Item>
-        </Menu>
-
         <Link key={product.id} to={path}>
           <Card>
             <Image src='https://react.semantic-ui.com/images/avatar/large/daniel.jpg' wrapped ui={false} />
@@ -52,10 +48,17 @@ class Product extends React.Component {
 
   render() {
     console.log(this.state.products)
-    return (
-      <div className="card-conteiner">
-        {this.state.products.map((product) => this.renderProduct(product))}
-      </div>
+    return ( 
+        <Grid centered columns={2}>
+          <GridColumn width={3} className="product-filter"> 
+            <ProductFilter />
+          </GridColumn>
+          <GridColumn width={13}>
+            <div className="card-conteiner">
+              {this.state.products.map((product) => this.renderProduct(product))}
+            </div>
+          </GridColumn>
+        </Grid>
     )
   }
 }
